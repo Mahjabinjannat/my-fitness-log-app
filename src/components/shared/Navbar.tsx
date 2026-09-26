@@ -34,21 +34,7 @@ const Navbar = () => {
   const { saved } = useContext(SaveContext);
 
   return (
-    // <div className="flex justify-between container mx-auto items-center">
-    //   <div className="flex">
-    //     <Image src={logo} alt="App Logo" />
-    //     <p>FITLOG</p>
-    //   </div>
-    //   <ul className="flex">
-    //     <li>Workout</li>
-    //     <li>Plan</li>
-    //   </ul>
-    //   <div>
-    //     <button>Plan (0)</button>
-    //     <button>Saved (0)</button>
-    //   </div>
-    // </div>
-    <div>
+    <div className="sticky top-0 z-100 bg-[#0D0F14]">
       <div className="navbar container mx-auto py-4">
         <div className="navbar-start">
           <div className="dropdown">
@@ -77,7 +63,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          {/* <Link href='/'><Image src={logo} alt="App Logo" /></Link> */}
+
           <Link
             href="/"
             className=" flex gap-4 font-bold text-[18px] font-oswald"
