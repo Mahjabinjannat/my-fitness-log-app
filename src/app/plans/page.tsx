@@ -6,6 +6,7 @@ import PlanWorkoutCard from "@/components/myPlanPage/PlanWorkoutCard";
 import { IWorkoutType } from "@/types/Workout";
 import SavedWorkoutCard from "@/components/myPlanPage/SavedWorkoutCard";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const PlanPage = () => {
   const { plans, setPlans } = useContext(PlanContext);
@@ -57,11 +58,16 @@ const PlanPage = () => {
           return 0;
         });
 
-  const handleRemove = (id: number) => {
-    if (activeTab === "plan")
+  const handleRemove = (id: number, action?: "mark" | "delete") => {
+    if (activeTab === "plan" && action === "mark") {
       setPlans((previous) => previous.filter((workout) => workout.id !== id));
-    else {
+      toast.success("Workout logged — nice work");
+    } else if (activeTab === "plan" && action === "delete") {
+      setPlans((previous) => previous.filter((workout) => workout.id !== id));
+      toast.success("Removed from today's plan");
+    } else {
       setSaved((previous) => previous.filter((workout) => workout.id !== id));
+      toast.success("Removed from today's plan");
     }
   };
 
@@ -104,7 +110,6 @@ const PlanPage = () => {
       </div>
 
       <section className="mt-10 flex items-end justify-between">
-   
         <div className="flex rounded-[17px] bg-[#1C1F25] p-1">
           <button
             onClick={() => setActiveTab("plan")}
@@ -150,7 +155,6 @@ const PlanPage = () => {
       </section>
 
       <div className="mt-9 space-y-4">
-       
         {activeTab === "plan" &&
           sortedPlan.map((workout: IWorkoutType) => (
             <PlanWorkoutCard
