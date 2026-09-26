@@ -49,7 +49,7 @@ const FitLogCardDetailsPage = async ({
         </div>
 
         <div className="flex flex-col">
-          <h1 className="font-oswald text-[40px] md:text-[48px] uppercase leading-none text-white font-bold">
+          <h1 className="font-oswald text-[40px] md:text-[48px] uppercase leading-none text-white font-medium tracking-[-2px] origin-left scale-x-75">
             {workout.name}
           </h1>
 
