@@ -1,8 +1,17 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import banner from "@/assets/banner.png";
 
 const Banner = () => {
+  const handleScroll = () => {
+    const workoutsSection = document.getElementById("library");
+
+    workoutsSection?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
   return (
     <div className="flex container mx-auto justify-between items-center mt-14 bg-[#15171D] py-16 px-6 pl-12 rounded-[15px]">
       <div className="space-y-3">
@@ -15,7 +24,11 @@ const Banner = () => {
           FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
           <br /> into today&apos;s plan, and watch the week&apos;s work add up.
         </p>
-        <button className="bg-[#C2F800] text-[#000000] py-2.5 px-7 rounded-[7px] font-bold text-[12px] mt-5">
+
+        <button
+          onClick={handleScroll}
+          className="bg-[#C2F800] text-[#000000] py-2.5 px-7 rounded-[7px] font-bold text-[12px] mt-5 cursor-pointer"
+        >
           BROWSE WORKOUTS
         </button>
       </div>
