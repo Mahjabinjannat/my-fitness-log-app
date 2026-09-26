@@ -1,5 +1,6 @@
 import { IWorkoutType } from "@/types/Workout";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { AiFillFire } from "react-icons/ai";
 import { GoStar } from "react-icons/go";
@@ -7,7 +8,10 @@ import { MdOutlineAccessTime } from "react-icons/md";
 
 const FitlogCard = ({ workout }: { workout: IWorkoutType }) => {
   return (
-    <div className="space-y-3 border-[0.5px] border-gray-600 rounded-[18px] cursor-pointer overflow-hidden bg-[#20242E] hover:border-[#C2F800] transition-colors">
+    <Link
+      href={`/FitLogCardDetails/${workout.id}`}
+      className="space-y-3 border-[0.5px] border-gray-600 rounded-[18px] cursor-pointer overflow-hidden bg-[#20242E] hover:border-[#C2F800] transition-colors"
+    >
       <Image
         src={workout.image}
         alt={workout.name}
@@ -46,7 +50,7 @@ const FitlogCard = ({ workout }: { workout: IWorkoutType }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
