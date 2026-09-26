@@ -1,22 +1,23 @@
 "use client";
+import { IWorkoutType } from "@/types/Workout";
 import React, { ReactNode, useState } from "react";
 import { createContext } from "react";
 
-interface IPlansNumberType {
-  plansNumber: number;
-  setPlansNumber: React.Dispatch<React.SetStateAction<number>>;
+interface IPlansType {
+  plans: IWorkoutType[];
+  setPlans: React.Dispatch<React.SetStateAction<IWorkoutType[]>>;
 }
 
-export const PlanContext = createContext<IPlansNumberType>({
-  plansNumber: 0,
-  setPlansNumber: () => {},
+export const PlanContext = createContext<IPlansType>({
+  plans: [],
+  setPlans: () => {},
 });
 
 const PlanProvider = ({ children }: { children: ReactNode }) => {
-  const [plansNumber, setPlansNumber] = useState<number>(0);
+  const [plans, setPlans] = useState<IWorkoutType[]>([]);
   const value = {
-    plansNumber,
-    setPlansNumber,
+    plans,
+    setPlans,
   };
 
   return <PlanContext.Provider value={value}>{children}</PlanContext.Provider>;

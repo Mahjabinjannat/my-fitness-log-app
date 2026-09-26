@@ -1,25 +1,26 @@
 "use client";
+import { IWorkoutType } from "@/types/Workout";
 import React, { ReactNode, useState } from "react";
 import { createContext } from "react";
 
-interface ISavedNumberType {
-  savedNumber: number;
-  setSavedNumber: React.Dispatch<React.SetStateAction<number>>;
+interface ISavedType {
+  saved: IWorkoutType[];
+  setSaved: React.Dispatch<React.SetStateAction<IWorkoutType[]>>;
 }
 
-export const PlanContext = createContext<ISavedNumberType>({
-  savedNumber: 0,
-  setSavedNumber: () => {},
+export const SaveContext = createContext<ISavedType>({
+  saved: [],
+  setSaved: () => {},
 });
 
 const SaveProvider = ({ children }: { children: ReactNode }) => {
-  const [savedNumber, setSavedNumber] = useState<number>(0);
+  const [saved, setSaved] = useState<IWorkoutType[]>([]);
   const value = {
-    savedNumber,
-    setSavedNumber,
+    saved,
+    setSaved,
   };
 
-  return <PlanContext.Provider value={value}>{children}</PlanContext.Provider>;
+  return <SaveContext.Provider value={value}>{children}</SaveContext.Provider>;
 };
 
 export default SaveProvider;
