@@ -3,6 +3,9 @@ import Image from "next/image";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useContext } from "react";
+import { PlanContext } from "@/context/PlanContext";
+import { SaveContext } from "@/context/SaveContext";
 
 const Navbar = () => {
   const pathName = usePathname();
@@ -27,6 +30,8 @@ const Navbar = () => {
       </li>
     </>
   );
+  const { plans } = useContext(PlanContext);
+  const { saved } = useContext(SaveContext);
 
   return (
     // <div className="flex justify-between container mx-auto items-center">
@@ -91,7 +96,7 @@ const Navbar = () => {
           >
             Plan{" "}
             <span className="h-5 w-5 flex items-center justify-center rounded-full bg-lime-400 text-sm font-semibold text-black ">
-              0
+              {plans.length}
             </span>
           </Link>
           <Link
@@ -100,7 +105,7 @@ const Navbar = () => {
           >
             Saved
             <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-700 text-sm font-medium text-gray-300">
-              0
+              {saved.length}
             </span>
           </Link>
         </div>
