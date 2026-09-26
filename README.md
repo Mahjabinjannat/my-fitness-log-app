@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️ FitLog
 
-## Getting Started
+**FitLog** is a modern workout planning and tracking web application designed to help users explore exercises, build personalized workout plans, save their favorite workouts, and keep track of their fitness routine.
 
-First, run the development server:
+The application features a clean, responsive dark-themed interface and provides detailed workout information including equipment, difficulty, sets, reps, duration, calories burned, ratings, muscle groups, and step-by-step instructions.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** – Application framework and routing
+- **React** – Component-based user interface
+- **TypeScript** – Type-safe JavaScript development
+- **Tailwind CSS** – Responsive and modern styling
+- **Context API** – Global state management for planned and saved workouts
+- **Next.js Image** – Optimized workout images
+- **React Toastify** – User-friendly notification messages
+- **REST API** – Fetching workout information
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Key Features
 
-To learn more about Next.js, take a look at the following resources:
+### 🏋️ 1. Explore Workout Library
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Users can browse a collection of workouts with useful information such as workout name, muscle groups, difficulty, duration, calories burned, and rating.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Each workout is presented through a clean and reusable card-based interface.
 
-## Deploy on Vercel
+### 📋 2. Build a Workout Plan
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Users can add workouts to their personal workout plan and view all selected exercises from the **Plan** page.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The navigation bar dynamically displays the number of workouts currently added to the plan.
+
+### 🔖 3. Save Favorite Workouts
+
+Workouts can be saved separately for later access.
+
+The saved-workout count is dynamically updated in the navigation bar using the **Context API**.
+
+### 🔍 4. Detailed Workout Information
+
+Each workout has its own details page containing:
+
+- Workout description
+- Target muscle groups
+- Required equipment
+- Difficulty level
+- Sets and reps
+- Workout duration
+- Estimated calories burned
+- Rating
+- Step-by-step instructions
+
+Users can also **Add to Plan** or **Save** a workout directly from its details page.
+
+### 📊 5. Workout Plan Management
+
+The Plan page provides an organized overview of selected workouts, including important workout statistics and controls.
+
+Users can view workout details, manage exercises in their plan, and easily navigate back to the workout library when their plan is empty.
+
+---
+
+## 🎨 Design
+
+FitLog uses a modern **dark fitness-themed UI** with:
+
+- Responsive layouts
+- Lime accent colors
+- Reusable workout cards
+- Interactive buttons and hover effects
+- Sticky navigation
+- Custom 404 page
+- Loading states
+- Mobile-friendly design
+
+---
+
+## 👩‍💻 Author
+
+**Mahjabin Jannat**
+
+Computer Science & Engineering Graduate  
+Aspiring Frontend Developer
