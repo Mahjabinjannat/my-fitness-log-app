@@ -16,7 +16,7 @@ const FitnessGrid = async () => {
       <p className="text-[12px] text-[#9CA3AF]">
         Twelve lifts covering every major muscle group.
       </p>
-      <div className="grid grid-cols-3 gap-4 my-[40px]">
+      <div className="grid grid-cols-3 gap-6 my-[40px]">
         {fitlogData.map((workout: IWorkoutType) => <FitlogCard key={workout.id} workout={workout}/>) }
       </div>
     </div>
