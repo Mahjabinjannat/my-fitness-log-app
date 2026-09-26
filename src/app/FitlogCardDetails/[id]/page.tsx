@@ -1,10 +1,16 @@
+import { notFound } from "next/navigation";
 import AddButton from "@/components/fitlogCardButtons/AddButton";
 import SaveButton from "@/components/fitlogCardButtons/SaveButton";
 import { IWorkoutType } from "@/types/Workout";
 import Image from "next/image";
 
 const getFitlogDetails = async (id: string) => {
-  const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
+  const res = await fetch(`https://api.api-store.workers.dev/api/fitlog/${id}`);
+
+  if (!res.ok) {
+    notFound();
+  }
+
   return res.json();
 };
 
@@ -15,6 +21,7 @@ const FitLogCardDetailsPage = async ({
 }) => {
   const { id } = await params;
   const workout: IWorkoutType = await getFitlogDetails(id);
+
   return (
     <div className="container mx-auto px-4 py-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">

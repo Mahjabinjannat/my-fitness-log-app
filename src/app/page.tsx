@@ -1,6 +1,6 @@
 import Banner from "@/components/homePage/Banner";
 import FitnessGrid from "@/components/homePage/FitnessGrid";
-import Image from "next/image";
+
 
 export default function Home() {
   return (
