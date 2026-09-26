@@ -3,21 +3,46 @@ import FitlogCard from "../shared/FitlogCard";
 import { IWorkoutType } from "@/types/Workout";
 
 const getFitLog = async () => {
-  const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+  //   const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+  //   return res.json();
+  // const res = await fetch("https://api.abcz.workers.dev/api/fitlog", {
+  //   cache: "no-store",
+  // });
+
+  // console.log("Status:", res.status);
+  // console.log("Content-Type:", res.headers.get("content-type"));
+
+  // const text = await res.text();
+
+  // console.log("Response:", text);
+
+  // return [];
+
+  const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
+
+  if (!res.ok) {
+    throw new Error(`Failed to fetch FitLog: ${res.status} ${res.statusText}`);
+  }
+
   return res.json();
 };
 
 const FitnessGrid = async () => {
   const fitlogData = await getFitLog();
-//   console.log(data);
+  //   console.log(data);
   return (
-    <div className="container mx-auto mt-16 leading-tight">
+    <div
+      className="container mx-auto mt-16 leading-tight scroll-mt-24"
+      id="library"
+    >
       <h1 className="text-[32px] font-bold">THE LIBRARY</h1>
       <p className="text-[12px] text-[#9CA3AF]">
         Twelve lifts covering every major muscle group.
       </p>
       <div className="grid grid-cols-3 gap-6 my-[40px]">
-        {fitlogData.map((workout: IWorkoutType) => <FitlogCard key={workout.id} workout={workout}/>) }
+        {fitlogData.map((workout: IWorkoutType) => (
+          <FitlogCard key={workout.id} workout={workout} />
+        ))}
       </div>
     </div>
   );
