@@ -13,7 +13,7 @@ const Navbar = () => {
           href="/"
           className={`text-[#9CA3AF] text-[12px] ${pathName === "/" ? "text-[#C2F800] bg-[#1A2312] px-5 py-1.5 rounded-[20px]" : ""} hover:rounded-[20px] hover:px-3 hover:py-1.5 `}
         >
-          Workout
+          Workouts
         </Link>
       </li>
 
