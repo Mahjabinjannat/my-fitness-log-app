@@ -1,8 +1,7 @@
+import AddButton from "@/components/fitlogCardButtons/AddButton";
+import SaveButton from "@/components/fitlogCardButtons/SaveButton";
 import { IWorkoutType } from "@/types/Workout";
 import Image from "next/image";
-import React from "react";
-import { BsFillBookmarkHeartFill } from "react-icons/bs";
-import { FiCalendar } from "react-icons/fi";
 
 const getFitlogDetails = async (id: string) => {
   const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
@@ -17,25 +16,6 @@ const FitLogCardDetailsPage = async ({
   const { id } = await params;
   const workout: IWorkoutType = await getFitlogDetails(id);
   return (
-    // <div>
-    //   <div>
-    //     <Image src={fitlogDetails.image} alt={fitlogDetails.name} width='200' height='300' />
-    //   </div>
-    //   <div>
-    //     <p>{fitlogDetails.name}</p>
-    //     <p>{fitlogDetails.description}</p>
-    //      <div className="flex gap-3">
-    //       {fitlogDetails.muscleGroups.map((muscle) => (
-    //         <span
-    //           key={muscle}
-    //           className="bg-[#C2F800] px-4 py-[0.5px] rounded-[15px] text-[#000000] font-bold text-[13px]"
-    //         >
-    //           {muscle}
-    //         </span>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </div>
     <div className="container mx-auto px-4 py-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
         <div className="relative w-full  h-full min-h-[500px] overflow-hidden rounded-[18px]">
@@ -159,15 +139,9 @@ const FitLogCardDetailsPage = async ({
           </div>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <button className="flex items-center gap-2 rounded-full bg-[#C2F800] px-6 py-3 font-semibold text-black transition hover:bg-[#b5ed00]">
-              <FiCalendar size={18} />
-              Add to today&apos;s plan
-            </button>
+            <AddButton workout={workout} />
 
-            <button className="flex items-center gap-2 rounded-full border border-[#D1D5DB] px-6 py-3 text-white transition hover:bg-[#1B1E24]">
-              <BsFillBookmarkHeartFill size={18} />
-              Save for later
-            </button>
+            <SaveButton workout={workout} />
           </div>
         </div>
       </div>
