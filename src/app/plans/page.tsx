@@ -72,7 +72,7 @@ const PlanPage = () => {
   };
 
   return (
-    <main className="container mx-auto px-6 py-10 text-[#E7E7EA] min-h-[700px]">
+    <main className="container mx-auto px-6 py-10 text-[#E7E7EA] min-h-175">
       <div>
         <h1 className="text-[40px] font-medium uppercase tracking-[-1.5px]">
           My Plan
@@ -135,7 +135,7 @@ const PlanPage = () => {
         </div>
 
         {/* Sort */}
-        <div className="w-[340px]">
+        <div className="w-85">
           <label className="mb-1 block text-[16px] text-[#E2E2E5]">
             Sort By
           </label>
@@ -172,14 +172,10 @@ const PlanPage = () => {
               onRemove={handleRemove}
             />
           ))}
-        {activeTab === "saved" && saved.length === 0 && (
-          <div className="rounded-[18px] border border-[#292D35] bg-[#1B1E24] py-16 text-center">
-            <p className="text-[#969AA3]">Your workout plan is empty.</p>
-          </div>
-        )}
+
         {((!plans.length && activeTab === "plan") ||
           (!saved.length && activeTab === "saved")) && (
-          <div className="mt-10 flex min-h-[310px] flex-col items-center justify-center rounded-[20px] border border-dashed border-[#292D35] bg-[#1B1E24] text-center">
+          <div className="mt-10 flex min-h-77.5 flex-col items-center justify-center rounded-[20px] border border-dashed border-[#292D35] bg-[#1B1E24] text-center">
             <h2 className="text-[26px] font-medium uppercase tracking-[-0.5px] text-[#E7E7EA]">
               Nothing Here Yet
             </h2>
@@ -190,7 +186,7 @@ const PlanPage = () => {
 
             <Link
               href="/"
-              className="mt-10 rounded-[24px] bg-[#C7F500] px-7 py-3 text-[16px] font-semibold text-black transition duration-300 hover:bg-[#B5E000]"
+              className="mt-10 rounded-3xl bg-[#C7F500] px-7 py-3 text-[16px] font-semibold text-black transition duration-300 hover:bg-[#B5E000]"
             >
               Go to workouts
             </Link>
