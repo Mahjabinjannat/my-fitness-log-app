@@ -3,7 +3,10 @@ import FitlogCard from "../shared/FitlogCard";
 import { IWorkoutType } from "@/types/Workout";
 
 const getFitLog = async () => {
-  //   const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+  const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+  if (!res.ok) {
+    throw new Error(`Failed to fetch FitLog: ${res.status} ${res.statusText}`);
+  }
   //   return res.json();
   // const res = await fetch("https://api.abcz.workers.dev/api/fitlog", {
   //   cache: "no-store",
@@ -18,11 +21,11 @@ const getFitLog = async () => {
 
   // return [];
 
-  const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
+  // const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
 
-  if (!res.ok) {
-    throw new Error(`Failed to fetch FitLog: ${res.status} ${res.statusText}`);
-  }
+  // if (!res.ok) {
+  //   throw new Error(`Failed to fetch FitLog: ${res.status} ${res.statusText}`);
+  // }
 
   return res.json();
 };

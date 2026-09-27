@@ -5,7 +5,7 @@ import { IWorkoutType } from "@/types/Workout";
 import Image from "next/image";
 
 const getFitlogDetails = async (id: string) => {
-  const res = await fetch(`https://api.api-store.workers.dev/api/fitlog/${id}`);
+  const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
 
   if (!res.ok) {
     notFound();
