@@ -66,9 +66,9 @@ const Navbar = () => {
 
           <Link
             href="/"
-            className=" flex gap-4 font-bold text-[18px] font-oswald"
+            className=" flex gap-2 md:gap-4 font-bold text-[14px] md:text-[18px] font-oswald items-center"
           >
-            <Image src={logo} alt="App Logo" />
+            <Image src={logo} alt="App Logo " />
             FITLOG
           </Link>
         </div>
@@ -78,19 +78,19 @@ const Navbar = () => {
         <div className="navbar-end">
           <Link
             href="/plans"
-            className="flex items-center justify-center gap-2 rounded-[20px] px-4 py-2 text-[12px] transition-colors duration-300 hover:bg-gray-800"
+            className="flex items-center justify-center gap-2 rounded-[20px] px-1.5 py-0.5 md:px-4 md:py-2 text-[12px] transition-colors duration-300 hover:bg-gray-800"
           >
             Plan{" "}
-            <span className="h-5 w-5 flex items-center justify-center rounded-full bg-lime-400 text-sm font-semibold text-black ">
+            <span className="h-4 w-4 md:h-5 md:w-5 flex items-center justify-center rounded-full bg-lime-400 text-sm font-light md:font-semibold text-black ">
               {plans.length}
             </span>
           </Link>
           <Link
             href="/plans"
-            className="flex items-center justify-center gap-2 rounded-[20px] px-4 py-2 text-[12px] text-[#9CA3AF] transition-colors duration-300 hover:bg-gray-800"
+            className="flex items-center justify-center gap-2 rounded-[20px] px-1.5 py-0.5 md:px-4 md:py-2 text-[12px] text-[#9CA3AF] transition-colors duration-300 hover:bg-gray-800"
           >
             Saved
-            <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-700 text-sm font-medium text-gray-300">
+            <span className="flex h-4 w-4 md:h-5 md:w-5 items-center justify-center rounded-full border border-gray-700 text-sm font-medium text-gray-300">
               {saved.length}
             </span>
           </Link>
