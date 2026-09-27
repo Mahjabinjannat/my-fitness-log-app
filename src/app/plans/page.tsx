@@ -9,6 +9,8 @@ import SavedWorkoutCard from "@/components/myPlanPage/SavedWorkoutCard";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import SortByDropDown from "@/components/myPlanPage/SortByDropDown";
+import Tabs from "@/components/myPlanPage/Tabs";
+import Stats from "@/components/myPlanPage/Stats";
 
 const PlanPage = () => {
   const { plans, setPlans } = useContext(PlanContext);
@@ -115,90 +117,11 @@ const PlanPage = () => {
         </p>
       </div>
 
-      <div
-        className="
-    mt-7 sm:mt-9
-    grid grid-cols-1
-    sm:grid-cols-3
-    overflow-hidden
-    rounded-[17px]
-    border border-[#292C33]
-    bg-[#1B1E24]
-  "
-      >
-        <div
-          className="
-      flex items-center justify-between
-      px-5 py-4
-      sm:block sm:px-5 sm:py-5
-      md:px-7
-    "
-        >
-          <p className="text-[12px] text-[#989BA2]">Exercises</p>
-
-          <h2
-            className="
-        text-[24px] font-bold text-[#C7FF00]
-        sm:mt-1 sm:text-[28px]
-        md:text-[34px]
-      "
-          >
-            {activeTab === "plan" ? plans.length : saved.length}
-          </h2>
-        </div>
-
-        <div
-          className="
-      flex items-center justify-between
-      border-t border-dashed border-[#30333A]
-      px-5 py-4
-
-      sm:block
-      sm:border-l sm:border-t-0
-      sm:px-5 sm:py-5
-
-      md:px-7
-    "
-        >
-          <p className="text-[12px] text-[#989BA2]">Minutes</p>
-
-          <h2
-            className="
-        text-[24px] font-bold text-[#E9E9EB]
-        sm:mt-1 sm:text-[28px]
-        md:text-[34px]
-      "
-          >
-            {totalMinutes}
-          </h2>
-        </div>
-
-        <div
-          className="
-      flex items-center justify-between
-      border-t border-dashed border-[#30333A]
-      px-5 py-4
-
-      sm:block
-      sm:border-l sm:border-t-0
-      sm:px-5 sm:py-5
-
-      md:px-7
-    "
-        >
-          <p className="text-[12px] text-[#989BA2]">Calories</p>
-
-          <h2
-            className="
-        text-[24px] font-bold text-[#E9E9EB]
-        sm:mt-1 sm:text-[28px]
-        md:text-[34px]
-      "
-          >
-            {totalCalories}
-          </h2>
-        </div>
-      </div>
+      <Stats
+        exercises={activeTab === "plan" ? plans.length : saved.length}
+        totalMinutes={totalMinutes}
+        totalCalories={totalCalories}
+      />
 
       <section
         className="
@@ -211,53 +134,9 @@ const PlanPage = () => {
           sm:justify-between
         "
       >
-        <div className="flex w-full rounded-[17px] bg-[#1C1F25] p-1 sm:w-auto">
-          <button
-            onClick={() => setActiveTab("plan")}
-            className={`
-              flex-1 cursor-pointer
-              rounded-[13px]
-              px-3 py-3
-              sm:flex-none sm:px-4
-              text-[12px]
-              sm:text-[14px]
-              transition
-              ${
-                activeTab === "plan"
-                  ? "bg-[#101215] text-[#C7FF00]"
-                  : "text-[#888D96] hover:text-white"
-              }
-            `}
-          >
-            Today&apos;s Plan
-          </button>
+        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
-          <button
-            onClick={() => setActiveTab("saved")}
-            className={`
-              flex-1 cursor-pointer
-              rounded-[13px]
-              px-3 py-3
-              sm:flex-none sm:px-4
-              text-[12px]
-              sm:text-[14px]
-              transition
-              ${
-                activeTab === "saved"
-                  ? "bg-[#101215] text-[#C7FF00]"
-                  : "text-[#888D96] hover:text-white"
-              }
-            `}
-          >
-            Saved
-          </button>
-        </div>
-
-        <SortByDropDown
-          sortBy={sortBy}
-          setSortBy={setSortBy}
-      
-        />
+        <SortByDropDown sortBy={sortBy} setSortBy={setSortBy} />
       </section>
 
       <div className="mt-7 sm:mt-9 space-y-4">
