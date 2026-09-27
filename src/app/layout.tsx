@@ -35,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             {children}
             <Footer />
             <ToastContainer
-              position="top-right"
+              position="bottom-right"
               autoClose={2500}
               hideProgressBar
               newestOnTop
