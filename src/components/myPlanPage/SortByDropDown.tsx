@@ -19,7 +19,6 @@ const SortByDropDown = ({ sortBy, setSortBy }: ISortByDropDownType) => {
         Sort By
       </label>
 
-      {/* Selected value */}
       <button
         type="button"
         onClick={() => setSortOpen((previous) => !previous)}
@@ -52,7 +51,6 @@ const SortByDropDown = ({ sortBy, setSortBy }: ISortByDropDownType) => {
         />
       </button>
 
-      {/* Dropdown */}
       {sortOpen && (
         <div
           className="
