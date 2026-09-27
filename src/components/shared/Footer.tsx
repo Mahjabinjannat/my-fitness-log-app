@@ -1,13 +1,10 @@
-
-
-
 import logo from "@/assets/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
     <footer className="bg-[#090A0D]">
-
       <div className="w-full border-b-[0.5px] border-gray-800"></div>
 
       <div className="py-6 sm:py-8">
@@ -25,14 +22,15 @@ const Footer = () => {
             lg:px-0
           "
         >
-   
-          <div className="flex items-center gap-3 font-oswald text-[18px] font-bold">
+          <Link
+            href="/"
+            className="flex items-center gap-3 font-oswald text-[18px] font-bold"
+          >
             <Image src={logo} alt="FitLog Logo" className="h-auto w-[28px]" />
 
             <p>FITLOG</p>
-          </div>
+          </Link>
 
-      
           <p
             className="
               text-center
