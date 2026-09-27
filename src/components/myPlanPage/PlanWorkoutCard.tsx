@@ -162,18 +162,22 @@ export default function PlanWorkoutCard({
           <Check size={16} strokeWidth={2.5} />
           Mark as Done
         </button>
-
         <button
           onClick={() => onRemove(workout.id, "delete")}
           className="
-            absolute right-4 top-4
-            cursor-pointer
-            text-[#D4D5D8]
-            transition
-            hover:text-[#C7FF00]
-            sm:static
-            sm:ml-1
-          "
+          absolute right-4 top-4
+          cursor-pointer
+          rounded-full
+        bg-white
+          p-[1.5px]
+        text-red-900
+          transition
+        hover:text-[#C7FF00]
+          md:static
+          md:ml-1
+          md:bg-transparent
+        md:text-[#D4D5D8]
+  "
           aria-label={`Remove ${workout.name}`}
         >
           <X size={18} />
