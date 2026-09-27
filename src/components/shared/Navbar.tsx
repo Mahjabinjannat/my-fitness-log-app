@@ -25,7 +25,7 @@ const Navbar = () => {
           href="/plans"
           className={`text-[#9CA3AF] text-[12px] ${pathName === "/plans" ? "text-[#C2F800] bg-[#1A2312] px-5 py-1.5 rounded-[20px]" : ""} hover:rounded-[20px] hover:px-3 hover:py-1.5 `}
         >
-          Plan
+          My Plan
         </Link>
       </li>
     </>
