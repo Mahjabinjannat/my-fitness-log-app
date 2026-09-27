@@ -8,6 +8,7 @@ import { IWorkoutType } from "@/types/Workout";
 import SavedWorkoutCard from "@/components/myPlanPage/SavedWorkoutCard";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import SortByDropDown from "@/components/myPlanPage/SortByDropDown";
 
 const PlanPage = () => {
   const { plans, setPlans } = useContext(PlanContext);
@@ -88,7 +89,6 @@ const PlanPage = () => {
         text-[#E7E7EA]
       "
     >
-      {/* Page Heading */}
       <div>
         <h1
           className="
@@ -253,33 +253,11 @@ const PlanPage = () => {
           </button>
         </div>
 
-        <div className="w-full sm:w-[250px] md:w-[300px] lg:w-85">
-          <label className="mb-1 block text-[14px] sm:text-[16px] text-[#E2E2E5]">
-            Sort By
-          </label>
-
-          <select
-            value={sortBy}
-            onChange={(e) =>
-              setSortBy(e.target.value as "duration" | "calories" | "rating")
-            }
-            className="
-              w-full
-              cursor-pointer
-              rounded-[18px]
-              border border-[#3A3E45]
-              bg-[#101215]
-              px-4 py-3
-              text-[14px]
-              text-[#D7D7DB]
-              outline-none
-            "
-          >
-            <option value="duration">Duration</option>
-            <option value="calories">Calories</option>
-            <option value="rating">Rating</option>
-          </select>
-        </div>
+        <SortByDropDown
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+      
+        />
       </section>
 
       <div className="mt-7 sm:mt-9 space-y-4">
