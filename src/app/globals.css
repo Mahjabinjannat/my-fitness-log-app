@@ -34,28 +34,78 @@ html {
   scroll-behavior: smooth;
 }
 
-/* @import "tailwindcss";
+.fitlog-toast {
+  position: relative !important;
 
-@plugin "daisyui";
+  background: #181b20 !important;
+  color: #e7e7ea !important;
 
-:root {
-  --background: #15171d;
-  --foreground: #ffffff;
+  border: 1px solid #2d3138 !important;
+  border-left: 4px solid #c7ff00 !important;
+
+  border-radius: 14px !important;
+
+  padding: 14px 16px !important;
+
+  font-size: 13px !important;
+  font-weight: 500 !important;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(199, 255, 0, 0.04) !important;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Success icon */
+.fitlog-toast .Toastify__toast-icon svg {
+  fill: #c7ff00 !important;
 }
 
-@theme {
-  --font-oswald: "Oswald", sans-serif;
+/* Close button */
+.fitlog-toast .Toastify__close-button {
+  position: absolute !important;
+
+  top: 50% !important;
+  right: 14px !important;
+
+  transform: translateY(-50%) !important;
+
+  color: #9ca3af !important;
+  opacity: 1 !important;
+
+  transition: color 0.2s ease;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+.fitlog-toast .Toastify__close-button:hover {
+  color: #c7ff00 !important;
+}
+
+/* Toast text */
+.fitlog-toast .Toastify__toast-body {
+  padding: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .fitlog-toast {
+    margin: 10px !important;
+    border-radius: 12px !important;
+    font-size: 12px !important;
+  }
+}
+
+.Toastify__toast--success.fitlog-toast {
+  border-left-color: #c7ff00 !important;
+}
+
+.Toastify__toast--error.fitlog-toast {
+  border-left-color: #ff4d4f !important;
+}
+
+.Toastify__toast--info.fitlog-toast {
+  border-left-color: #60a5fa !important;
+}
+
+.Toastify__toast--warning.fitlog-toast {
+  border-left-color: #fbbf24 !important;
+}
+
+

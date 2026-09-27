@@ -31,10 +31,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col ">
         <PlanProvider>
           <SaveProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <ToastContainer />
+            <Navbar />
+            {children}
+            <Footer />
+            <ToastContainer
+              position="top-right"
+              autoClose={2500}
+              hideProgressBar
+              newestOnTop
+              closeOnClick
+              pauseOnHover
+              theme="dark"
+              toastClassName="fitlog-toast"
+            />
           </SaveProvider>
         </PlanProvider>
       </body>

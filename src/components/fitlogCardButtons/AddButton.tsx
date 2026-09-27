@@ -1,7 +1,7 @@
 "use client";
 import { PlanContext } from "@/context/PlanContext";
 import { IWorkoutType } from "@/types/Workout";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { FiCalendar } from "react-icons/fi";
 import { toast } from "react-toastify";
 
@@ -15,7 +15,7 @@ const AddButton = ({ workout }: { workout: IWorkoutType }) => {
         setPlans([...plans, workout]);
         toast.success("Added to today's plan");
       } else {
-        toast.error("Already in your plan");
+        toast.info("Already in your plan");
       }
     } else {
       toast.error("Today's plan is full — finish these first!");
